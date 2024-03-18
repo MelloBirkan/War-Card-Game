@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var playerCard = "card2"
-  @State var cpuCard = "card12"
-  @State var playerScore = 0
-  @State var cpuScore = 0
-  
+  @State private var oo = CardLogicDO()
+    
     var body: some View {
         ZStack {
           Image(.backgroundPlain)
@@ -25,15 +22,15 @@ struct ContentView: View {
             Spacer()
             HStack(content: {
               Spacer()
-              Image(playerCard)
+              Image(oo.playerCard)
               Spacer()
-              Image(cpuCard)
+              Image(oo.cpuCard)
               Spacer()
             })
             
             Spacer()
             Button(action: {
-              deal()
+              oo.deal()
             }, label: {
               Image(.button)
             })
@@ -41,9 +38,9 @@ struct ContentView: View {
             Spacer()
             HStack(content: {
               Spacer()
-              statsView(player: "Player", points: playerScore)
+              statsView(player: "Player", points: oo.playerScore)
               Spacer()
-              statsView(player: "CPU", points: cpuScore)
+              statsView(player: "CPU", points: oo.cpuScore)
               Spacer()
             })
             
@@ -51,19 +48,6 @@ struct ContentView: View {
           })
         }
     }
-  
-  func deal() {
-    // Randomize the players card
-    let playerCardValue = Int.random(in: 2...14)
-    playerCard = "card" + String(playerCardValue)
-    // Randomize the cpu card
-    let cpuCardValue = Int.random(in: 2...14)
-    cpuCard = "card" + String(cpuCardValue)
-    // Update te score
-    (playerCardValue > cpuCardValue)
-    ? (playerScore += 1)
-    : (cpuScore += 1)
-  }
 }
 
 #Preview {

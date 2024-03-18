@@ -11,6 +11,7 @@
 		1B24F3B92BA5F42600D2DBD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B24F3B82BA5F42600D2DBD2 /* ContentView.swift */; };
 		1B24F3BB2BA5F42900D2DBD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B24F3BA2BA5F42900D2DBD2 /* Assets.xcassets */; };
 		1B24F3BE2BA5F42900D2DBD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B24F3BD2BA5F42900D2DBD2 /* Preview Assets.xcassets */; };
+		1BC7329A2BA8BAD20038B05B /* CardLogicDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC732992BA8BAD20038B05B /* CardLogicDO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1B24F3B82BA5F42600D2DBD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B24F3BA2BA5F42900D2DBD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B24F3BD2BA5F42900D2DBD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1BC732992BA8BAD20038B05B /* CardLogicDO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogicDO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		1B24F3B52BA5F42600D2DBD2 /* War Card Game */ = {
 			isa = PBXGroup;
 			children = (
+				1BC732982BA8BAA20038B05B /* Models */,
 				1B24F3B62BA5F42600D2DBD2 /* War_Card_GameApp.swift */,
 				1B24F3B82BA5F42600D2DBD2 /* ContentView.swift */,
 				1B24F3BA2BA5F42900D2DBD2 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				1B24F3BD2BA5F42900D2DBD2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1BC732982BA8BAA20038B05B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BC732992BA8BAD20038B05B /* CardLogicDO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				1B24F3B92BA5F42600D2DBD2 /* ContentView.swift in Sources */,
 				1B24F3B72BA5F42600D2DBD2 /* War_Card_GameApp.swift in Sources */,
+				1BC7329A2BA8BAD20038B05B /* CardLogicDO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
