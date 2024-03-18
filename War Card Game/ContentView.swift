@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+  var playerCard: Image = Image(.card7)
+  var cpuCard: Image = Image(.card13)
+  var playerScore = 0
+  var cpuScore = 0
+  
     var body: some View {
         ZStack {
           Image(.backgroundPlain)
+            .resizable()
+            .ignoresSafeArea()
           
-          VStack(spacing: 30, content: {
+          VStack(spacing: 40, content: {
             Image(.logo)
             
-            HStack(spacing: 40, content: {
-              Image(.card14)
+            HStack(spacing: 50, content: {
+              playerCard
               
-              Image(.card10)
+              cpuCard
             })
             
             Button(action: {}, label: {
@@ -26,12 +33,17 @@ struct ContentView: View {
             })
             
             HStack(spacing: 120, content: {
-              statsView(player: "Player", points: 0)
-              statsView(player: "CPU", points: 0)
+              statsView(player: "Player", points: playerScore)
+              
+              statsView(player: "CPU", points: cpuScore)
             })
           })
         }
     }
+  
+  func deal() {
+    print("Deal")
+  }
 }
 
 #Preview {
@@ -41,9 +53,10 @@ struct ContentView: View {
 func statsView(player: String, points: Int) -> some View {
   VStack(spacing: 15, content: {
   Text(player)
+      .font(.headline)
   
   Text("\(points)")
-    .font(.title)
+    .font(.largeTitle)
 })
 .foregroundStyle(.white)
 }
