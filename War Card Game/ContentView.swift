@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-  var playerCard: Image = Image(.card7)
-  var cpuCard: Image = Image(.card13)
-  var playerScore = 0
-  var cpuScore = 0
+  @State var playerCard = "card2"
+  @State var cpuCard = "card12"
+  @State var playerScore = 0
+  @State var cpuScore = 0
   
     var body: some View {
         ZStack {
@@ -19,30 +19,50 @@ struct ContentView: View {
             .resizable()
             .ignoresSafeArea()
           
-          VStack(spacing: 40, content: {
+          VStack(content: {
+            Spacer()
             Image(.logo)
-            
-            HStack(spacing: 50, content: {
-              playerCard
-              
-              cpuCard
+            Spacer()
+            HStack(content: {
+              Spacer()
+              Image(playerCard)
+              Spacer()
+              Image(cpuCard)
+              Spacer()
             })
             
-            Button(action: {}, label: {
+            Spacer()
+            Button(action: {
+              deal()
+            }, label: {
               Image(.button)
             })
             
-            HStack(spacing: 120, content: {
+            Spacer()
+            HStack(content: {
+              Spacer()
               statsView(player: "Player", points: playerScore)
-              
+              Spacer()
               statsView(player: "CPU", points: cpuScore)
+              Spacer()
             })
+            
+            Spacer()
           })
         }
     }
   
   func deal() {
-    print("Deal")
+    // Randomize the players card
+    let playerCardValue = Int.random(in: 2...14)
+    playerCard = "card" + String(playerCardValue)
+    // Randomize the cpu card
+    let cpuCardValue = Int.random(in: 2...14)
+    cpuCard = "card" + String(cpuCardValue)
+    // Update te score
+    (playerCardValue > cpuCardValue)
+    ? (playerScore += 1)
+    : (cpuScore += 1)
   }
 }
 
